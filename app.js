@@ -117,7 +117,7 @@ var seaTac = {
 };
 seaTac.render();
 
-
+//TEST
 
 
 var seattle = {
