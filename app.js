@@ -98,7 +98,7 @@ function createTable() {
   var tbodyEl = document.createElement("tbody");
   var tFootEl = document.createElement("foot");
 
-  mainEl.appendChild(tblEl);
+  mainEl.appendChild(tblEl); //append table as a child to the
   tblEl.appendChild(theadEl);
   tblEl.appendChild(tbodyEl);
   tblEl.appendChild(tFootEl);
