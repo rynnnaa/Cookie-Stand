@@ -190,24 +190,20 @@ formEl.addEventListener('submit', function(event) {
   // console.log(event.target.ta.value);
   var textInput = event.target.t.value;
   var numberInput = event.target.n.value;
-  var passwordInput = event.target.p.value;
-  var emailInput = event.target.e.value;
 
   var pText = document.createElement('p');
   var pNumber = document.createElement('p');
-  var pPassword = document.createElement('p');
-  var pEmail = document.createElement('p');
 
   pText.textContent = textInput;
   pNumber.textContent = numberInput;
-  pPassword.textContent = passwordInput;
-  pEmail.textContent = emailInput;
+  pNumber.textContent = numberInput;
+  pNumber.textContent = numberInput;
 
   var resultsEl = document.getElementById('results');
   resultsEl.appendChild(pText);
   resultsEl.appendChild(pNumber);
-  resultsEl.appendChild(pPassword);
-  resultsEl.appendChild(pEmail);
+  resultsEl.appendChild(pNumber);
+  resultsEl.appendChild(pNumber);
 
 
   event.target.t.value = '';

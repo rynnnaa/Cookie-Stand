@@ -1,11 +1,14 @@
 .plum {
-<<<<<<< HEAD
   color: plum
-=======
-  color: plum;
->>>>>>> 7182b8bc20c445695643866fe1c460d210e6f456
 }
 
 .black {
   color: black;
+}
+
+#main-content {
+  background-image: url('./family.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
 }
