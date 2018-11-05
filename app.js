@@ -37,7 +37,7 @@ function Store(nameOfStore, minCusPerhr, maxCusPerhr, avgCookiesSoldPerCust) {
 
 Store.prototype.addCustPerHour = function(min, max) {
   for (var i = 0; i < openHours.length; i++) {
-    var randomCustPerHour = Math.floor(Math.random() * (max - min + 1) + min);
+    var randomCustPerHour = Math.round(Math.random() * (max - min + 1) + min);
     this.custPerHour.push(randomCustPerHour);
     console.log("customers per hour", randomCustPerHour);
   }
@@ -182,31 +182,31 @@ function changeColor(event) {
 
 pEl.addEventListener("click", changeColor);
 
-// FORM DATA
-var formEl = document.getElementById("form-data");
-formEl.addEventListener("submit", function(event) {
-  event.preventDefault();
+// We are creating a salesFormEl variable  to be used to get the HTML document element names sales-form
+var salesFormEl = document.getElementById("sales-form");
 
-  // console.log(event.target.ta.value);
-  var textInput = event.target.t.value;
-  var numberInput = event.target.n.value;
+// This is an event listener waiting for the user to press the submit with the mouse.
+salesFormEl.addEventListener("submit", function() {});
 
-  var pText = document.createElement("p");
-  var pNumber = document.createElement("p");
+//We are getting the HTML Element, sales-form and adding an event listener when the submit happens; the function will happen
+document
+  .getElementById("sales-form")
+  .addEventListener("submit", function(event) {
+    // This prevents the defualt from occuring
+    event.preventDefault();
 
-  pText.textContent = textInput;
-  pNumber.textContent = numberInput;
-  pNumber.textContent = numberInput;
-  pNumber.textContent = numberInput;
+    // This is the differnt variables assigned a value to populate in the table that is to be used when we use the new Store syntax.
+    var name = event.target.storename.value;
+    var min = event.target.min.value;
+    var max = event.target.max.value;
+    var avg = event.target.avg.value;
 
-  var resultsEl = document.getElementById("results");
-  resultsEl.appendChild(pText);
-  resultsEl.appendChild(pNumber);
-  resultsEl.appendChild(pNumber);
-  resultsEl.appendChild(pNumber);
+    // This is the new Store syntax
+    new Store(name, min, max, avg);
 
-  event.target.t.value = "";
-  event.target.n.value = "";
-  event.target.n.value = "";
-  event.target.n.value = "";
-});
+    // This indicated the values that will be entered by the user which will be inbtween the single qoutes.
+    event.target.storename.value = "";
+    event.target.min.value = "";
+    event.target.max.value = "";
+    event.target.avg.value = "";
+  });
